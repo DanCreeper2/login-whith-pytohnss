@@ -1,0 +1,19 @@
+def login(): #the login system
+  attemps = 1 #the ammount of login atempts
+  while attemps <=2:
+    line = 0 #the line we are reading
+    file = open("pass.txt", "r") #opening the file 
+    findname = file.read().splitlines() #spliting the file into individual lines
+    usernam = input("enter your username: ") #geting username
+    if usernam in findname: #check if username is in the file
+      for user in findname: #for each user in the file
+        line = line + 1 
+        if user == usernam: # if the line has the username on it
+          password = line + 1 #the passowrd is the line bellow
+          rlpassword = linecache.getline("pass.txt", password).rstrip() #read the ine of the password
+
+      passw = input("please enter your pasword: ") 
+      if passw == rlpassword: #if entered password equal the password wlcome the user
+        print("welcome")
+        print("\n\n\n\n\n")
+        attemps = attemps + 1
